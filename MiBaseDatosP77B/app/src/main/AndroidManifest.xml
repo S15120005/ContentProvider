@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jesusalvarezarriaga.mibasedatosp77b">
+
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+
+    <permission android:name="my.permissionRead"></permission>
+    <permission android:name="my.permissionWrite"></permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="com.jesusalvarezarriaga.mibasedatosp77b.MiContentProviderDB"
+            android:authorities="com.jesusalvarezarriaga.mibasedatosp77b.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:forceUriPermissions="true"
+            android:grantUriPermissions="true"
+            android:readPermission="my.permissionRead"
+            android:writePermission="my.permissionWrite"></provider>
+
+        <activity android:name="com.jesusalvarezarriaga.mibasedatosp77b.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.jesusalvarezarriaga.mibasedatosp77b.AgregarContactoActivity"></activity>
+        <activity android:name="com.jesusalvarezarriaga.mibasedatosp77b.EditarContactoActivity"></activity>
+        <activity android:name="com.jesusalvarezarriaga.mibasedatosp77b.Contacto"></activity>
+        <activity android:name="com.jesusalvarezarriaga.mibasedatosp77b.DAOContacto"></activity>
+        <activity android:name="com.jesusalvarezarriaga.mibasedatosp77b.MiDB"></activity>
+    </application>
+
+</manifest>
